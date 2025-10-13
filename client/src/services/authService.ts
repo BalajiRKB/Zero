@@ -1,9 +1,9 @@
 import api from './api.ts';
-import type { AuthResponse, LoginForm, RegisterForm, User } from '../types/index.ts';
+import type { AuthResponse, LoginForm, RegisterRequest, User } from '../types/index.ts';
 
 export const authService = {
   // Register new user
-  register: async (data: RegisterForm): Promise<AuthResponse> => {
+  register: async (data: RegisterRequest): Promise<AuthResponse> => {
     const response = await api.post('/auth/register', data);
     return response.data;
   },

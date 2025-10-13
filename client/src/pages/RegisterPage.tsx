@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext.tsx';
 import { authService } from '../services/authService.ts';
-import type { RegisterForm } from '../types/index.ts';
+import type { RegisterForm, RegisterRequest } from '../types/index.ts';
 
 const RegisterPage = () => {
   const [formData, setFormData] = useState<RegisterForm>({
@@ -42,7 +42,7 @@ const RegisterPage = () => {
 
     try {
       // Only send required fields to backend (exclude confirmPassword)
-      const registrationData = {
+      const registrationData: RegisterRequest = {
         name: formData.name,
         email: formData.email,
         password: formData.password
