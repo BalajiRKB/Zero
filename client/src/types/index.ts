@@ -134,6 +134,12 @@ export interface RegisterForm {
   confirmPassword: string;
 }
 
+export interface RegisterRequest {
+  name: string;
+  email: string;
+  password: string;
+}
+
 export interface ChannelForm {
   name: string;
   description?: string;
